@@ -4,3 +4,6 @@
 [submodule "nc-content/plugins/updraftplus"]
 	path = nc-content/plugins/updraftplus
 	url = https://github.com/wp-plugins/updraftplus
+[submodule "nc-content/themes/understrap"]
+	path = nc-content/themes/understrap
+	url = https://github.com/holger1411/understrap.git
