@@ -7,3 +7,9 @@
 [submodule "nc-content/themes/understrap"]
 	path = nc-content/themes/understrap
 	url = https://github.com/holger1411/understrap.git
+[submodule "nc-content/themes/Networking Concierge/css/font-awesome"]
+	path = nc-content/themes/Networking Concierge/css/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
+[submodule "nc-content/plugins/advanced-custom-fields"]
+	path = nc-content/plugins/advanced-custom-fields
+	url = https://github.com/elliotcondon/acf.git

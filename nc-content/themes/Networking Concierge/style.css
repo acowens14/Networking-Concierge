@@ -7,5 +7,322 @@ Version: 0.0.1
 Text Domain: NetworkingConcierge
 Tags: bootstrap
 */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 100%; }
+
+.row {
+  margin: 0; }
+  .row .col-lg-12:first-of-type {
+    padding-left: 0; }
+
+/*Override defaults*/
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 300; }
+
+.button {
+  box-shadow: 1px 1px 1px 1px #606060;
+  border-radius: 50px;
+  color: white;
+  background-color: #519E51;
+  padding: 3% 7% 3% 7%;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase; }
+  .button:hover {
+    text-decoration: none;
+    color: white; }
+
+.main-heading {
+  /*height: 665px;*/
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll; }
+
+.main-heading-wrapper {
+  position: relative; }
+  .main-heading-wrapper img {
+    position: relative;
+    width: 100%; }
+
+.main-heading-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5% 5% 5% 5%;
+  text-align: center;
+  background-color: black;
+  opacity: 0.9;
+  height: 100%;
+  max-height: 100%;
+  max-width: 50%; }
+  .main-heading-text h1 {
+    /*font-family: 'Cookie', sans-serif;*/
+    font-family: 'Dancing Script', cursive;
+    font-style: italic;
+    /*font-size: 170px;*/
+    font-size: 6.7em;
+    color: goldenrod; }
+  .main-heading-text h2 {
+    line-height: 0.8em;
+    font-size: 4.6em;
+    color: whitesmoke;
+    font-family: 'Abril Fatface', cursive; }
+
+.navbar {
+  background-color: transparent !important; }
+  .navbar li {
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase; }
+
+.navbar-brand {
+  color: white; }
+
+#main-menu * {
+  color: white; }
+
+.custom-navbar {
+  color: black; }
+
+#navbarNavDropdown {
+  /*float: right;*/ }
+
+.navbar-expand-md {
+  /*TODO CHANGE THIS!!!*/
+  display: none;
+  /*ABOVE !!*/
+  background-color: black;
+  position: absolute;
+  right: 0;
+  z-index: 1; }
+
+.btn-lets-connect {
+  margin-top: 10%; }
+
+.hover-box {
+  margin-bottom: 30px; }
+  .hover-box:hover {
+    box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.3); }
+
+.highlight-container {
+  padding: 5% 17% 5% 17%; }
+
+.highlights {
+  background-color: #f9f9f9; }
+  .highlights div {
+    height: auto;
+    text-align: left; }
+    .highlights div .row {
+      margin-top: 30px; }
+    .highlights div h4 {
+      padding: 5% 0 2% 0;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 300;
+      height: auto;
+      line-height: 18px; }
+    .highlights div p {
+      font-size: 13px;
+      height: auto;
+      line-height: 22.1px;
+      text-align: left;
+      padding-bottom: 5%; }
+
+.container-fluid {
+  padding: 0; }
+
+.main-grid {
+  padding: 0;
+  flex: 1 1 80%;
+  min-height: 100vh;
+  box-shadow: 1px 0px 1px 0px grey; }
+
+.grid-wrapper {
+  display: grid;
+  height: 100%;
+  grid-template-rows: repeat(3, 400px);
+  grid-template-columns: repeat(3, 1fr); }
+  .grid-wrapper .grid-item:nth-last-of-type(2) {
+    background-color: #f4f0eb; }
+  .grid-wrapper .grid-item:nth-last-of-type(1) {
+    background-color: #f4f0eb; }
+
+.grid-item {
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.divider {
+  margin-top: 2px;
+  width: 20px;
+  color: #8c7332;
+  border-top-width: 2px;
+  border-top-style: solid;
+  margin-bottom: 21px;
+  font-size: 13px; }
+
+.dividerFull {
+  width: 40%;
+  border-bottom: 2px solid #8c7332;
+  margin: 0 auto;
+  margin-bottom: 2em; }
+
+.grid-img {
+  opacity: 0.90;
+  object-fit: contain;
+  background-position: center;
+  max-width: 100%; }
+
+.small {
+  grid-row: span 1;
+  grid-column: span 1; }
+
+.tall {
+  grid-row: span 2;
+  grid-column: span 1; }
+
+.grid-text {
+  text-align: left;
+  padding: 5%; }
+
+.contact {
+  height: 100%; }
+
+.contact-container {
+  padding: 20%; }
+
+.additional-services {
+  border-top: 2px solid #f5f5f5; }
+
+.fill-image {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: round;
+  background-size: contain; }
+
+.icon-list-container {
+  padding-bottom: 5%; }
+  .icon-list-container h1 {
+    padding: 5% 0 5% 0;
+    font-size: 50px;
+    text-align: center; }
+
+.fa {
+  color: goldenrod;
+  padding-right: 30px; }
+
+.list-item-head {
+  font-weight: 700; }
+
+.icon-list-item ul {
+  padding: 0; }
+.icon-list-item li {
+  list-style: circle;
+  padding: 0 5% 0 5%; }
+
+.events {
+  background-color: #f9f9f9;
+  padding: 5% 5% 5% 5%; }
+  .events h5 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    height: auto;
+    margin: 0; }
+  .events .event-container {
+    padding-top: 5%; }
+  .events .event-list-item {
+    padding: 0 5% 2.5% 10%;
+    opacity: 0.90; }
+  .events .lg-image {
+    padding: 5% 5% 0 10%;
+    opacity: 0.80; }
+
+.testimonials {
+  background-color: #c1c1c1;
+  padding: 5%; }
+  .testimonials h1 {
+    text-align: center;
+    margin-bottom: 1.5em; }
+  .testimonials .col-lg-6 {
+    padding: 5% 2% 0 2%; }
+  .testimonials p {
+    font-style: italic; }
+  .testimonials h4 {
+    margin-top: 1.5em; }
+  .testimonials .row {
+    margin-top: 1.8em; }
+  .testimonials .fa {
+    color: #0054ff; }
+
+.temp-footer {
+  background-color: black;
+  color: #f9f9f9;
+  text-align: center;
+  font-size: 16px;
+  height: auto;
+  line-height: 22px; }
+  .temp-footer div {
+    display: inline; }
+  .temp-footer img {
+    max-width: 64px; }
+  .temp-footer i {
+    padding: 2%;
+    text-align: center; }
+  .temp-footer li {
+    text-align: center;
+    list-style: none;
+    font-size: 20px;
+    padding: 3%; }
+
+/*
+.box-content-text{
+  margin:25% 0 25% 0;
+  padding:0 15% 0 15%;
+  justify-content:center;
+  p {
+  }
+}
+
+.box-content-img{
+  padding:0;
+  line-height:0;
+  img{
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+  }
+}
+*/
+/*region: Wordpress Menu Styling Overrides*/
+@media only screen and (min-width: 1200px) {
+  .main-heading-text h1 {
+    margin-top: 20%; } }
+@media only screen and (max-width: 1200px) {
+  .grid-wrapper {
+    display: block; }
+
+  .main-heading-text h1 {
+    font-size: 4.5em; }
+  .main-heading-text h2 {
+    font-size: 3.2em; } }
+@media only screen and (max-width: 768px) {
+  .grid-wrapper {
+    display: block; }
+
+  .main-heading-text h1 {
+    font-size: 3.3em; }
+  .main-heading-text h2 {
+    font-size: 2.1em; } }
+/*endregion*/
+/*
+TODO CHANGE MAYBE*/
+.col-lg-6 {
+  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
