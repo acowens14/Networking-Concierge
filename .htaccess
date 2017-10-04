@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+RewriteEngine On
+
+#REWRITE RULES
+#---------------------
+
+#RULE ROOTPATH
+
+RewriteRule ^$ /wordpress/index.php [L]
+
+#RULE SUB-FOLDERS AND FILES
+RewriteCond %{URL} wp-admin(.*)$ [OR]
+RewriteCond %{URL} wp-content(.*)$ [OR]
+RewriteCond %{URL} wp-includes(.*)$ [OR]
+RewriteCond %{URL} .*\.php
+RewriteRule ^(.*)$ /wordpress/$1 [L]
+
+#RULE SHORT URLS
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{URL} !-d
+RewriteCond %{URL} !-d
+RewriteRule ^(.*)$ /wordpress/index.php?p=$1 [L]
+
+#BEGIN WordPress
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+#END WordPress
+
+</IfModule>

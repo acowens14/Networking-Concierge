@@ -22,19 +22,21 @@ if($_SERVER['HTTP_HOST'] == 'nc.local'){
     define('DB_USER', 'dev');
     define('DB_PASSWORD', 'dev');
     define('WP_DEBUG', true);
-	
 
     //OVERRIDE DATABASE TO POINT TO LOCALHOST
     //define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
     //define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
 }
 //MYUAT CONFIGURATION
-else if($_SERVER['HTTP_HOST'] == 'uat.nc.com'){
-    define('DB_HOST', 'localhost');
+else if($_SERVER['HTTP_HOST'] == 'nc.swiftconcepts.net'){
+    define('DB_HOST', 'squirtle');
     define('DB_NAME', 'uat_nc');
     define('DB_USER', 'uat');
     define('DB_PASSWORD', 'uat');
     define('WP_DEBUG', true);
+
+	define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
+	define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
 }
 
 //STAGING CONFIGURATION
@@ -56,12 +58,6 @@ else{
     define('DB_PASSWORD', '');
     define('WP_DEBUG', true);
 }
-
-
-
-    //OVERRIDE DATABASE TO POINT TO LOCALHOST
-    //define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
-   //define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
 
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/nc-content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/nc-content' );

@@ -18,7 +18,7 @@ get_header();
 //Add HTML here
 ?>
 <div class="main-heading-wrapper">
-    <img src="<?php echo content_url();?>/uploads/2017/09/1-e1506662211884.jpg";>
+    <img src="<?php echo content_url();?>/uploads/2017/10/landing-main.jpg">
     <div class="main-heading-text">
         <h1><span>Ashley Assists</span></h1>
         <h2>Your Personal <br/> Networking Concierge</h2>
@@ -60,9 +60,10 @@ get_header();
                 <h2>My Story</h2>
                 <div class="divider"></div>
                 <p>How I became a corporate refugee</p>
+                <p>(Coming Soon!)</p>
             </div>
         </div>
-        <div class="grid-img small" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/tmp-img/7.jpg')";></div>
+        <div class="grid-img small" style="background-image: url('<?php echo content_url();?>/uploads/2017/10/7-adjusted.jpg";></div>
         <div class="grid-item small">
             <div class="grid-text">
                 <h2>Virtual Assistant</h2>
@@ -75,7 +76,7 @@ get_header();
             <div class="grid-text">
                 <h2>What I can do for you</h2>
                 <div class="divider"></div>
-                <p>If you want it, I got it.. or something like that </p>
+                <p>I take away the mind numbing activities of networking so you can grow your business.</p>
             </div>
         </div>
         <div class="grid-img tall" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/tmp-img/main3.jpg')";></div>
@@ -90,6 +91,9 @@ get_header();
             </div>
         </div>
         <div class="grid-item small">
+            <a href="#mc_embed_signup" style="text-align: center;">
+                <img style="max-width: 50%;" src="<?php echo content_url();?>/uploads/2017/10/letters-1132703_1280.png"/>
+            </a>
             <div class="grid-text">
 
             </div>
@@ -121,7 +125,7 @@ get_header();
                     </div>
                     <div class="p-2">
                         <h3>Follow Up Calls & Emails</h3>
-                        <p>After you received your business cards from a networking event orthose that pile on your desk,these contacts will be scheduled forthatface to face or conference call.</p>
+                        <p>After you received your business cards from a networking event or those that have piled on your desk, these contacts will be scheduled for a face to face meeting or conference call.</p>
                     </div>
                 </div>
             </div>
@@ -132,7 +136,7 @@ get_header();
                     </div>
                     <div class="p-2">
                         <h3>Direct Calendar Scheduling</h3>
-                        <p>Shared calendar - Outlook, Gmail etc.</p>
+                        <p>Shared calendar - Outlook, Gmail</p>
                     </div>
                 </div>
             </div>
@@ -156,7 +160,7 @@ get_header();
                     </div>
                     <div class="p-2">
                         <h3>Networking Newsletter -Subscriber</h3>
-                        <p>Added as a subscriberto the“Networking Newsletter”that is distributed weekly to over 100 plus members with upcoming networking opportunities,trends,tips and educational content.</p>
+                        <p>Added as a subscriberto the“Networking Newsletter”that is distributed weekly to over 300 plus members with upcoming networking opportunities,trends,tips and educational content.</p>
                     </div>
                 </div>
             </div>
@@ -185,9 +189,11 @@ get_header();
                                 <li>Going to a networking event? I will join you as a strategic partner representing you and your company.</li>
                                 <li>Gathering 2x the amount of applicable business cards in 1/2 the time.</li>
                                 <li>Up to four (4) events a month</li>
-                                <li>Greater Philadelphia Area –*additionaltravel expenses may incur outside the greater Philadelphia Area.*</li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="p-2">
+                        <p><strong>Greater Philadelphia Area</strong> –*additional travel expenses may incur outside the greater Philadelphia Area.*</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -197,8 +203,9 @@ get_header();
                         </div>
                         <div class="p-2">
                             <h3>Personalized Handwritten Letters</h3>
-                                <p> Adding a personaltouch to your prospects, clients birthdays, etc. following up with something as personal as a handwritten letter does not go unnoticed.</p>
+                                <p> Adding a personal touch to your prospects, clients birthdays, etc. following up with something as personal as a handwritten letter does not go unnoticed.</p>
                                 <strong>Signed, Sealed and Mailed.</strong>
+                                <p>Sending a thank you note to your prospects and clients doesn't go unnoticed. Something as personal as a handwritten letter will add that extra something special when keeping those important relationships.</p>
                         </div>
                     </div>
                 </div>
@@ -220,7 +227,7 @@ get_header();
                         </div>
                         <div class="p-2">
                             <h3>Networking Newsletter – Spotlight Member</h3>
-                            <p>Added as a Spotlight Memberto my Networking Newsletter that is distributed weekly to over 100 + subscribers.</p>
+                            <p>Added as a Spotlight Member to my Networking Newsletter that is distributed weekly to over 100 + subscribers.</p>
                         </div>
                     </div>
                 </div>
