@@ -27,21 +27,36 @@ get_header();
         </div>
     </div>
 </div>
-
+<!--Black bar of stuff-->
+<div class="container top-links">
+    <div class="row justify-content-center">
+        <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+            <a target="_blank" href="mailto:ashley@ashleyassists.com?subject=Lets-connect-AA"><i class="fa fa-envelope-square fa-4x"></i></a>
+        </div>
+        <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+            <a target="_blank" href="https://www.linkedin.com/in/ashowens/"><i class="fa fa-linkedin-square fa-4x"></i></a>
+        </div>
+        <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+            <a target="_blank" href="https://www.facebook.com/ashleyassists/"><i class="fa fa-facebook-square fa-4x"></i></a>
+        </div>
+        <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+            <a target="_blank" href="https://www.instagram.com/ashleyassists/"><i class="fa fa-instagram fa-4x"></i></a>
+        </div>
+    </div>
+</div>
 
 <!-- region Highlights -->
-<section class="container-fluid highlights">
+<section class="container-fluid">
 <div class="highlight-container">
-    <h3 class="text-center">I take away the mind numbing activities of networking so you can grow your business</h3>
-    <h6 class="text-center">If you are in business of any kind, networking, building and keeping relationships is a big part of your success</h6>
+    <h3 class="text-center">Networking, building and keeping relationships is a key part of any successful business</h3>
     <div class="row">
         <?php $query = new WP_Query(['post_type' => 'highlight']);
             if($query->have_posts() ) while ($query->have_posts()) : $query->the_post(); ?>
-                <div class="col-md-4">
-                    <img class="hover-box" src="<?php echo get_field('highlight_image')['url']; ?>"/>
-                    <div>
-                        <h4><?php the_title(); ?></h4>
-                    </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <a href="#<?php the_field("scroll_id")?>">
+                        <img class="hover-box" src="<?php echo get_field('highlight_image')['url']; ?>"/>
+                    </a>
+                    <h4><?php the_title(); ?></h4>
                     <div>
                         <p><?php the_field('highlight_overview'); ?></p>
                     </div>
@@ -52,316 +67,192 @@ get_header();
 </section>
 <!--endregion-->
 
-<!-- 3x3 Grid -->
-<section class="main-grid container-fluid">
-    <div class="grid-wrapper">
-        <div class="grid-item small">
-            <div class="grid-text">
-                <h2>My Story</h2>
-                <div class="divider"></div>
-                <p>How I became a corporate refugee</p>
-                <p>(Coming Soon!)</p>
-            </div>
-        </div>
-        <div class="grid-img small" style="background-image: url('<?php echo content_url();?>/uploads/2017/10/7-adjusted.jpg";></div>
-        <div class="grid-item small">
-            <div class="grid-text">
-                <h2>Virtual Assistant</h2>
-                <div class="divider"></div>
-                <p>Here to assist, personally</p>
-            </div>
-        </div>
-        <div class="grid-img small" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/tmp-img/phones.jpg')";></div>
-        <div class="grid-item small">
-            <div class="grid-text">
-                <h2>What I can do for you</h2>
-                <div class="divider"></div>
-                <p>I take away the mind numbing activities of networking so you can grow your business.</p>
-            </div>
-        </div>
-        <div class="grid-img tall" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/tmp-img/main3.jpg')";></div>
+<?php
+//TODO will be worpdress data.
+//<editor-fold desc="Annoying Section Data Load">
+$post1 = (object)[
+    'title' => "My Story",
+    'titlelink' => "/my-story",
+    'content' => "How I became a corporate refugee <br> (Coming Soon!)"
+];
 
-        <!-- <div class="grid-img" style="background-image: url('./img/main2.jpeg')";></div> -->
-        <div class="grid-item small">
-            <div class="grid-text">
-                <h2>Newsletter</h2>
-                <div class="divider"></div>
-                <p>This weekly newsletter will provide a great resource for upcoming networking opportunities to grow your network, with tips,
-                    tricks and overall strategies to make the most of your time while growing your business.</p>
-            </div>
-        </div>
-        <div class="grid-item small">
-            <a href="#mc_embed_signup" style="text-align: center;">
-                <img style="max-width: 50%;" src="<?php echo content_url();?>/uploads/2017/10/letters-1132703_1280.png"/>
-            </a>
-            <div class="grid-text">
+$post2 = (object)[
+	'imageurl' => content_url() . "/uploads/2017/10/Ashley_Desk.jpg",
+    'double' => false
+];
 
+$post3 = (object)[
+	'title' => "Virtual Assistant",
+	'content' => "Here to assist, personally",
+];
+
+$post4 = (object)[
+	'imageurl' => content_url() . "/uploads/2017/10/phone-laptop.jpg",
+	'double' => false
+];
+
+$post5 = (object)[
+	'title' => "What I can do for you",
+	'content' => "I take the added administrative mind-numbing work off your shoulders, work the room as your strategic partner, collect decisions and compile double the business cards in half the amount of time"
+];
+
+$post6 = (object)[
+	'imageurl' => content_url() . "/uploads/2017/10/city.jpg",
+    'double' => true
+];
+
+$post7 = (object)[
+	'title' => "Newsletter",
+	'content' => "This weekly newsletter will provide a great resource for upcoming networking opportunities to grow your network, with tips, tricks and overall strategies to make the most of your time while growing your business."
+];
+
+$post8 = (object)[
+	'imageurl' => content_url() . "/uploads/2017/10/newsletter.jpg",
+	'imagelink' => "/my-story",
+	'double' => false
+];
+
+$post9 = (object)[
+	//'imageurl' => content_url() . "/uploads/2017/10/city.jpg",
+	'double' => true
+];
+
+$fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post8);
+//</editor-fold>
+?>
+<style type="text/css">
+    #annoying div.center-block{
+        margin: 20%;
+    }
+    .img-responsive{
+        min-height: 100%;
+        background-size: cover;
+    }
+    #annoying div:nth-of-type(odd){
+        background-color: #f5f5f5;
+    }
+    #annoying div:nth-of-type(7){
+        background-color: #f4f0eb;
+    }
+    @media only screen and (min-width: 1200px) {
+        .img-responsive-double {
+            min-height: calc(200%);
+        }
+        #annoying [class*='col-']{
+            height: 425px;
+            /*height: 26.564rem;*/
+        }
+    }
+    @media only screen and (max-width: 1199px) {
+        .img-responsive-double {
+            min-height: calc(100%);
+        }
+        #annoying [class*='col-']{
+            height: 340px;
+            /*height: 26.564rem;*/
+        }
+    }
+</style>
+<!--region Annoying Section-->
+<section class="container-fluid" id="annoying">
+    <div class="row no-gutter">
+        <?php foreach($fakeposts as $fake_post): ?>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+	            <?php if(isset($fake_post->imageurl)):?>
+                    <?php if(isset($fake_post->imagelink)):?>
+                        <a href="<?php echo $fake_post->imagelink; ?>">
+                            <div class="img-responsive<?php echo($fake_post->double ? "-double" : "");?>" style="background:url('<?php echo $fake_post->imageurl;?>') center center no-repeat;"></div>
+                        </a>
+		            <?php else: ?>
+                        <div class="img-responsive<?php echo($fake_post->double ? "-double" : "");?>" style="background:url('<?php echo $fake_post->imageurl;?>') center center no-repeat;"></div>
+                    <?php endif; ?>
+	            <?php else: ?>
+                    <div class="center-block">
+                        <?php if(isset($fake_post->titlelink)):?>
+                            <a href="<?php echo $fake_post->titlelink; ?>">
+                                <h3><?php echo $fake_post->title; ?></h3>
+                            </a>
+                        <?php else: ?>
+                            <h3><?php echo (isset($fake_post->title) ? $fake_post->title : ""); ?></h3>
+                        <?php endif;?>
+                        <div class="divider"></div>
+                        <p><?php echo (isset($fake_post->content) ? $fake_post->content : ""); ?></p>
+                    </div>
+	            <?php endif ?>
             </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
-
-<!--region Premium Membership-->
-<div class="container">
-    <div class="icon-list-container">
-        <h1>Premium Membership</h1>
-        <div class="dividerFull"></div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex flex-row icon-list-item">
-                    <div class="p-2">
-                        <i class="fa fa-envelope-o fa-4x"></i>
-                    </div>
-                    <div class="p-2">
-                        <h3>Custom Tailored Email Messages</h3>
-                        <p>Custom emails will be created based on your company’s mission statement and first impression. Option for corresponding as an employee (requires your company email) or using my email <a href="mailto:ashley@ashleyassists.com">ashley@ashleyassists.com</a> and customizing the signature with your company logo.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="d-flex flex-row icon-list-item">
-                    <div class="p-2">
-                        <i class="fa fa-phone fa-4x"></i>
-                    </div>
-                    <div class="p-2">
-                        <h3>Follow Up Calls & Emails</h3>
-                        <p>After you received your business cards from a networking event or those that have piled on your desk, these contacts will be scheduled for a face to face meeting or conference call.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="d-flex flex-row icon-list-item">
-                    <div class="p-2">
-                        <i class="fa fa-calendar fa-4x"></i>
-                    </div>
-                    <div class="p-2">
-                        <h3>Direct Calendar Scheduling</h3>
-                        <p>Shared calendar - Outlook, Gmail</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="d-flex flex-row icon-list-item">
-                    <div class="p-2">
-                        <i class="fa fa-list-alt fa-4x"></i>
-                    </div>
-                    <div class="p-2">
-                        <h3>Status Updates</h3>
-                        <p>Status on the activity of each warm prospect, ie: when a meeting is scheduled, a voicemail left etc.
-                            <br/>Bcc'd on all corresponding emails or bi-weekly updates.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="d-flex flex-row icon-list-item">
-                    <div class="p-2">
-                        <i class="fa fa-newspaper-o fa-4x"></i>
-                    </div>
-                    <div class="p-2">
-                        <h3>Networking Newsletter -Subscriber</h3>
-                        <p>Added as a subscriberto the“Networking Newsletter”that is distributed weekly to over 300 plus members with upcoming networking opportunities,trends,tips and educational content.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 <!--endregion-->
 
-
-    <!--region WhiteGlove-->
-    <div class="container">
-        <div class="icon-list-container">
-            <h1 style="padding-bottom: 0;">White Glove</h1>
-            <p style="text-align: center; padding-bottom: 40px;">(Includes all premium services)</p>
+<!--region Service Pacakges-->
+<?php
+$_terms = get_terms( array('service_packages') );
+foreach ($_terms as $term) :
+	$term_slug = $term->slug;
+	$_posts = new WP_Query( array(
+		'post_type'         => 'service',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'service_packages',
+				'field'    => 'slug',
+				'terms'    => $term_slug,
+			),
+		),
+	)); ?>
+	<div class="container-fluid">
+        <div class="highlight-container" id="<?php echo $term_slug; ?>">
+            <h2 class="text-center"><?php echo $term->name;?></h2>
+            <p class="text-center"><?php echo (isset($term->description) ? $term->description : "");?></p>
             <div class="dividerFull"></div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="d-flex flex-row icon-list-item">
-                        <div class="p-2">
-                            <i class="fa fa-user-circle-o fa-4x"></i>
-                        </div>
-                        <div class="p-2">
-                            <h3>On Site Strategic Partner</h3>
-                            <ul>
-                                <li>Going to a networking event? I will join you as a strategic partner representing you and your company.</li>
-                                <li>Gathering 2x the amount of applicable business cards in 1/2 the time.</li>
-                                <li>Up to four (4) events a month</li>
-                            </ul>
-                        </div>
+        <div class="row">
+        <?php
+            if( $_posts->have_posts() ) :
+                while ( $_posts->have_posts() ) : $_posts->the_post(); ?>
+                    <div class="col-12 col-sm-2 col-lg-1 text-center">
+                        <i class="fa <?php the_field("icon") ?> fa-4x"></i>
                     </div>
-                    <div class="p-2">
-                        <p><strong>Greater Philadelphia Area</strong> –*additional travel expenses may incur outside the greater Philadelphia Area.*</p>
+                    <div class="col-12 col-sm-10 col-lg-5">
+                        <h3><?php the_title(); ?></h3>
+                        <?php the_field("content"); ?>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex flex-row icon-list-item">
-                        <div class="p-2">
-                            <i class="fa fa-pencil-square-o fa-4x"></i>
-                        </div>
-                        <div class="p-2">
-                            <h3>Personalized Handwritten Letters</h3>
-                                <p> Adding a personal touch to your prospects, clients birthdays, etc. following up with something as personal as a handwritten letter does not go unnoticed.</p>
-                                <strong>Signed, Sealed and Mailed.</strong>
-                                <p>Sending a thank you note to your prospects and clients doesn't go unnoticed. Something as personal as a handwritten letter will add that extra something special when keeping those important relationships.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex flex-row icon-list-item">
-                        <div class="p-2">
-                            <i class="fa fa-linkedin fa-4x"></i>
-                        </div>
-                        <div class="p-2">
-                            <h3>Connecting Via Linkedin</h3>
-                            <p>Connecting with warm prospects after a meeting or conference call is scheduled.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex flex-row icon-list-item">
-                        <div class="p-2">
-                            <i class="fa fa-newspaper-o fa-4x"></i>
-                        </div>
-                        <div class="p-2">
-                            <h3>Networking Newsletter – Spotlight Member</h3>
-                            <p>Added as a Spotlight Member to my Networking Newsletter that is distributed weekly to over 100 + subscribers.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <?php
+                endwhile;
+            endif; ?>
         </div>
-    </div>
-    </div>
-    <!--endregion-->
+        </div>
+	</div>
+    <?php
+	wp_reset_postdata();
+endforeach;
+?>
+<!--endregion-->
 
-    <!--region Additional Services-->
-    <div class="container">
-        <div class="icon-list-container">
-            <h1>Additional Services</h1>
-            <div class="dividerFull"></div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="d-flex flex-row icon-list-item">
-                        <div class="p-2">
-                            <i class="fa fa-newspaper-o fa-4x"></i>
-                        </div>
-                        <div class="p-2">
-                            <h3>Branded Newsletters</h3>
-                            <ul>
-                                <li>Customized use of <a target="_blank" href="https://mailchimp.com/">Mail Chimp</a></li>
-                                <li>Import all applicable clients, prospects, strategic partners, etc.</li>
-                                <li>Unlimited consultation of your vision and message</li>
-                                <li>Importing of contacts as subscribers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="d-flex flex-row icon-list-item">
-                        <div class="p-2">
-                            <i class="fa fa-users fa-4x"></i>
-                        </div>
-                        <div class="p-2">
-                            <h3>Specialty Events</h3>
-                            <div><strong>Trade show or Conference?</strong></div>
-                            <ul>
-                                <li>Either attending or being a vendor for, I will join and manage the table while you walk around and network and vice versa.</li>
-                            </ul>
-                            <div><strong>Speaking Engagement/ Book Signing etc.?</strong></div>
-                            <ul>
-                                <li>I will gladly network on your behalf and gather business cards, applicable marketing material etc. to use for your internal distribution list.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!--endregion-->
-
-
-<!-- Icon list -->
-<div class="container-fluid additional-services">
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="fill-image" style="background-image: url('<?php echo content_url();?>/uploads/2017/09/calendar.jpg')";></div>
-            <!--<div class="fill-image" style="background-image: url('<?php /*echo get_stylesheet_directory_uri();*/?>/tmp-img/left.jpeg')";></div>-->
-        </div>
-        <div class="col-lg-6">
-            <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" data-url="https://calendly.com/ashleyowens" style="max-width:100%;height:650px;"></div>
-            <script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
-            <!-- Calendly inline widget end -->
-        </div>
-        </div>
-    </div>
-</div>
-
+<!-- region Testimonials -->
 <section class="testimonials">
     <div class="container">
-        <h1>Hear What Others Have To Say</h1>
+        <h2>Hear What Others Have To Say</h2>
         <div class="row">
-            <div class="col-lg-1">
-                <i class="fa fa-quote-left fa-3x"></i>
-            </div>
-            <div class="col-lg-5">
-
-                <p>"Ashley is a diligent worker, you can tell that when you first meet with her, I
-                    knew this was going to be a good business relationship right away. We had a
-                    quick need for some help at a small conference and Ashley pulled it together
-                    like a true professional. In less than 24 hours she had a plan and was onsite
-                    networking on our behalf ( did I mention she traveled 3 hours each way as well).
-                    We look forward to working with Ashley and her team at Ashley Assists in the
-                    future, we have seen nothing but clear positive benefits."</p>
-                <h4><strong>Marty McDonald</strong><br />CoFounder/CEO of Bad Rhino</h4>
-            </div>
-            <div class="col-lg-1">
-                <i class="fa fa-quote-left fa-3x"></i>
-            </div>
-            <div class="col-lg-5">
-                <p>"I've spent several years speaking, writing and working to develop technology to help people to
-                    learn and adopt best practices in business networking. There is SO much potential in the activity,
-                    but there are few networkers who really understand HOW to do it correctly - and they waste a lot of
-                    time and opportunities as a result. From the very first time I spoke with Ashley, it was clear she's
-                    one ofthe ones who 'gets it'. She has the exact right attitude and approach to building networking
-                    relationships and her energy is infectious. I can'tthink of a better person to have to watch your
-                    back and helping to take care ofthe details as you build your network."</p>
-                <h4><strong>Chris Owens</strong><br /> Founder/CEO LincSphere</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1">
-                <i class="fa fa-quote-left fa-3x"></i>
-            </div>
-            <div class="col-lg-5">
-                <p>"Wow! Ashley Owens knows how to ASSIST! I have known Ashley for a couple of years, and from
-                    the very first meeting, she was incredibly outgoing, polite, friendly, and still very directin getting
-                    to the point. She is goal oriented and relentless in her ability to connect people for the greater
-                    good.
-                    Ashley goes above and beyond in connecting referral partners, potential clients, and asking the
-                    right questions to make those introductions a perfect match. If you are considering an outside
-                    source like Ashley Assists,this is a no-brainer!"</p>
-                <h4><strong>Todd Hesbacher</strong><br /> Home Run Office Products</h4>
-            </div>
-            <div class="col-lg-1">
-                <i class="fa fa-quote-left fa-3x"></i>
-            </div>
-            <div class="col-lg-5">
-                <p>"Ashley has been an amazing business partner for me since our very first meeting. She has been
-                    excellent in referring several high-quality business opportunities to me which have been extremely
-                    beneficial for my career growth. In addition to that, Ashley is truly a fun and engaging person to
-                    work who brings excellent energy to all her professional interactions! I highly recommend working
-                    with Ashley.” </p>
-                <h4><strong>Colin Delaney</strong><br /> CSS TECH</h4>
-            </div>
+            <?php $query = new WP_Query(['post_type' => 'testimonial']);
+            if($query->have_posts() ) while ($query->have_posts()) : $query->the_post(); ?>
+                <div class="col-lg-1">
+                    <i class="fa fa-quote-left fa-3x"></i>
+                </div>
+                <div class="col-lg-5">
+                    <?php the_field("client_quote"); ?>
+                    <h4>
+                        <strong><?php the_field("client_name"); ?></strong>
+                        <br /><?php the_field("client_title");?>
+                        <a href="<?php the_field("client_company_website"); ?>" target="_blank"><?php the_field("client_company"); ?></a>
+                    </h4>
+                </div>
+            <?php endwhile;  ?>
         </div>
     </div>
 </section>
+<!--endregion-->
 
+<!--TODO INJECT DYNAMICALLY-->
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -382,19 +273,22 @@ get_header();
 </div>
 
 <!--End mc_embed_signup-->
-
-<section class="temp-footer">
-    <div class="row">
-<!--        <div class="col-lg-2">
-            <div class="logo">
-                <img src="<?php /*echo get_stylesheet_directory_uri();*/?>/tmp-img/main-logo.jpg">
+<!--TODO MAKE WIDGET-->
+<section id="footer" style="background-color: black;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="mailto:ashley@ashleyassists.com?subject=Lets-connect-AA"><i class="fa fa-envelope-square fa-4x"></i></a>
             </div>
-        </div>-->
-        <div class="col-lg-12">
-            <div><a target="_blank" href="mailto:ashley@ashleyassists.com?subject=Lets-connect-AA"><i class="fa fa-envelope-square fa-4x"></i></a></div>
-            <div><a target="_blank" href="https://www.linkedin.com/in/ashowens/"><i class="fa fa-linkedin-square fa-4x"></i></a></div>
-            <div><a target="_blank" href="https://www.facebook.com/ashleyassists/"><i class="fa fa-facebook-square fa-4x"></i></a></div>
-            <div><a target="_blank" href="https://www.instagram.com/ashleyassists/"><i class="fa fa-instagram fa-4x"></i></a></div>
+            <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="https://www.linkedin.com/in/ashowens/"><i class="fa fa-linkedin-square fa-4x"></i></a>
+            </div>
+            <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="https://www.facebook.com/ashleyassists/"><i class="fa fa-facebook-square fa-4x"></i></a>
+            </div>
+            <div class="col-auto col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="https://www.instagram.com/ashleyassists/"><i class="fa fa-instagram fa-4x"></i></a>
+            </div>
         </div>
     </div>
 </section>

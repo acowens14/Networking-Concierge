@@ -16,6 +16,14 @@
 
 //LOCAL CONFIGURATION
 
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix  = 'wp_';
 if($_SERVER['HTTP_HOST'] == 'nc.local'){
     define('DB_HOST', 'localhost');
 	define('DB_NAME', 'dev_nc');
@@ -23,9 +31,6 @@ if($_SERVER['HTTP_HOST'] == 'nc.local'){
     define('DB_PASSWORD', 'dev');
     define('WP_DEBUG', true);
 
-    //OVERRIDE DATABASE TO POINT TO LOCALHOST
-    //define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
-    //define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
 }
 //MYUAT CONFIGURATION
 else if($_SERVER['HTTP_HOST'] == 'nc.swiftconcepts.net'){
@@ -34,9 +39,6 @@ else if($_SERVER['HTTP_HOST'] == 'nc.swiftconcepts.net'){
     define('DB_USER', 'uat');
     define('DB_PASSWORD', 'uat');
     define('WP_DEBUG', true);
-
-	define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
-	define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
 }
 
 //STAGING CONFIGURATION
@@ -50,14 +52,17 @@ else if($_SERVER['HTTP_HOST'] == 'dev.ashleyassits.com'){
 }
 
 //NO HOST MATCH? DEFAULT TO PRODUCTION MODE.
-//TODO SETUP PRODUCTION
 else{
-    define('DB_HOST', '');
-    define('DB_NAME', '');
-    define('DB_USER', '');
-    define('DB_PASSWORD', '');
-    define('WP_DEBUG', true);
+    define('DB_HOST', 'ashl41301003227.db.41301003.217.hostedresource.net:3311');
+    define('DB_NAME', 'ashl41301003227');
+    define('DB_USER', 'ashl41301003227');
+    define('DB_PASSWORD', 'fP6x-LiniM|i');
+    define('WP_DEBUG', false);
+	$table_prefix  = 'wp_b4prhcy9x4_';
 }
+
+define( 'WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
+define( 'WP_HOME', 'http://' . $_SERVER['SERVER_NAME'] . '/' );
 
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/nc-content' );
 define( 'WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/nc-content' );
@@ -88,13 +93,6 @@ define('NONCE_SALT',       'R@r{Ooli{^|J&{%o.$Ul|bE8%wi-22JQHARIu:0J/X~{51|amN-X
 
 /**#@-*/
 
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix  = 'wp_';
 
 /**
  * For developers: WordPress debugging mode.

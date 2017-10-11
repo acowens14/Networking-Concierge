@@ -15,6 +15,10 @@ $main-accent: goldenrod;
 $linen: #f4f0eb;
 $niceGreen: #519E51;
 
+$small-break: 480px;
+$medium-break: 1024px;
+$large-break: 1440px;
+
 body{
   font-family: 'Ubuntu', sans-serif;
   font-size: 100%;
@@ -27,8 +31,29 @@ body{
 }
 
 /*Override defaults*/
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+h1, h2, h3, h4, h5, h6{
   font-weight: 300;
+}
+h1{
+  font-size: 7rem;
+}
+h2{
+  font-size: 4.5rem;
+}
+h3{
+  font-size: 2rem;
+}
+h4{
+  font-size: 1.75rem;
+}
+h5{
+  font-size: 1.5rem;
+}
+h6{
+  font-size: 1.25rem;
+}
+p{
+  font-size: 13px;
 }
 
 .button{
@@ -62,6 +87,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 
 }
 
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
 
 .main-heading-text{
   position: absolute;
@@ -75,16 +105,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   max-height: 100%;
   max-width: 50%;
   h1{
-    /*font-family: 'Cookie', sans-serif;*/
     font-family: 'Dancing Script', cursive;
     font-style: italic;
-    /*font-size: 170px;*/
-    font-size: 6.7em;
+    /*font-size: 6.7em;*/
     color: $main-accent;
    }
   h2{
     line-height: 0.8em;
-    font-size: 4.6em;
     color: whitesmoke;
     font-family: 'Abril Fatface', cursive;
   }
@@ -111,17 +138,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   color: black;
 }
 
-#navbarNavDropdown{
-  /*float: right;*/
-}
 .navbar-expand-md{
-  /*TODO CHANGE THIS!!!*/
-  display: none;
-  /*ABOVE !!*/
   background-color: black;
   position: absolute;
   right: 0;
   z-index: 1;
+  border-radius: 1px 1px 2px 2px;
 }
 
 
@@ -137,10 +159,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 }
 
 .highlight-container{
-  padding: 5% 17% 5% 17%;
-}
-
-.highlights{
   background-color: $main-background;
   div{
     height: auto;
@@ -150,17 +168,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
       margin-top: 30px;
     }
 
-     h4{
+    h4{
       padding: 5% 0 2% 0;
-      font-size: 22px;
+      /*font-size: 22px;*/
       font-style: normal;
       font-weight: 300;
       height: auto;
       line-height: 18px;
     }
-
     p{
-      font-size: 13px;
+      /*font-size: 13px;*/
       height: auto;
       line-height: 22.1px;
       text-align: left;
@@ -178,6 +195,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   flex: 1 1 80%;
   min-height: 100vh;
   box-shadow: 1px 0px 1px 0px grey;
+  img{
+    max-width: 50%;
+  }
 }
 
 .grid-wrapper{
@@ -214,6 +234,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   width: 40%;
   border-bottom: 2px solid #8c7332;
   margin: 0 auto;
+  margin-top: 3%;
   margin-bottom: 2em;
 }
 
@@ -263,15 +284,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .icon-list-container{
   h1{
     padding: 5% 0 5% 0;
-    font-size: 50px;
+    font-size: 3em;
     text-align: center;
   }
   padding-bottom: 5%;
 }
 
+/*HORRIBBLE applies to ALL fa class*/
 .fa{
   color: $main-accent;
-  padding-right: 30px;
+  /*padding-right: 30px;*/
 }
 
 .list-item-head{
@@ -336,10 +358,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 }
 
 .temp-footer{
-  background-color: black;
-  color: #f9f9f9;
+
   text-align: center;
-  font-size: 16px;
+  /*font-size: 16px;*/
   height: auto;
   line-height: 22px;
 
@@ -351,55 +372,117 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
   }
 
   i{
-    padding: 2%;
     text-align: center;
 
   }
     li{
       text-align: center;
       list-style: none;
-      font-size: 20px;
+      /*font-size: 20px;*/
       padding: 3%;
     }
 }
-/*region: Wordpress Menu Styling Overrides*/
+.top-links{
+  padding-top: 2em;
+  background-color: #f9f9f9;
+  i{
+    color: #007bff;
+  }
+}
+.temp-footer{
+  color: #f9f9f9;
+  background-color: black;
+}
 
-@media only screen and (min-width: 1200px){
+/*region Resolution Overrides*/
+//Large Desktop Changes.
+@media only screen and (min-width: $large-break){
   .main-heading-text h1{
     margin-top: 5%;
   }
+  //Resize area under slider to look a bit more stylish
+  .highlight-container{
+      padding: 2% 17% 0 17%;
+  }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: $medium-break){
+  .grid-wrapper {
+    display: block;
+  }
+  .main-grid img{
+    max-width: 25%;
+    margin: 1em;
+  }
+  .main-heading-text{
+    h1{
+      /*font-size: 4.5em;*/
+    }
+    h2{
+
+    }
+  }
+}
+
+@media only screen and (max-width: 930px){
   .grid-wrapper {
     display: block;
   }
   .main-heading-text{
     h1{
-      font-size: 4.5em;
+      /*font-size: 3.3em;*/
     }
     h2{
-      font-size: 3.2em;
+      /*font-size: 2.1em;*/
     }
   }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 680px){
   .grid-wrapper {
     display: block;
   }
   .main-heading-text{
     h1{
-      font-size: 3.3em;
+      /*font-size: 1.7em;*/
     }
     h2{
-      font-size: 2.1em;
+      /*font-size: 1.7em;*/
+    }
+    span{
+      /*font-size: 0.7em;*/
     }
   }
 }
 
+@media only screen and (max-width: 530px){
+  .grid-wrapper {
+    display: block;
+  }
+  .main-heading-text{
+    h1{
+      font-size: 0.8em;
+    }
+    h2{
+      font-size: 0.9em;
+    }
+    h3{
+      font-size: .7em;
+    }
+    span{
+      font-size: 0.7em;
+    }
+    .btn-lets-connect a{
+      font-size: .7em;
+    }
+    .icon-list-container h1{
+      font-size: 1.5em;
+    }
+  }
+}
+/*endregion*/
 
-
+/*region Wordpress Menu Styling Overrides*/
 #header .primary-menu{
 
 } // container class
@@ -410,7 +493,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 #header .primary-menu li ul {} // unordered list if there is drop down items
 #header .primary-menu li li {} // each drop down navigation item
 #header .primary-menu li li a {} // each drap down navigation item anchor
-
 /*endregion*/
 
 
