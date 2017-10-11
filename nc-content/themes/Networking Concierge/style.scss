@@ -3,7 +3,7 @@ Theme Name: Networking Concierge
 Author: Andrew/Jim
 Template: understrap
 Description: Networking Concierge Website
-Version: 0.0.1
+Version: 0.0.2
 Text Domain: NetworkingConcierge
 Tags: bootstrap
 */
@@ -11,10 +11,12 @@ Tags: bootstrap
 $main-background: #f9f9f9;
 $item-background: #f5f5f5;
 $alt-background: #c1c1c1;
+$dark-background: #0c0c0c;
 $main-accent: goldenrod;
 $linen: #f4f0eb;
 $niceGreen: #519E51;
 
+$extra-small-break: 320px;
 $small-break: 480px;
 $medium-break: 1024px;
 $large-break: 1440px;
@@ -23,40 +25,39 @@ body{
   font-family: 'Ubuntu', sans-serif;
   font-size: 100%;
 }
-.row{
-  margin: 0;
-  .col-lg-12:first-of-type{
-    padding-left: 0;
-  }
-}
 
+/*region Default Element Overrides*/
 /*Override defaults*/
 h1, h2, h3, h4, h5, h6{
   font-weight: 300;
 }
-h1{
-  font-size: 7rem;
-}
-h2{
-  font-size: 4.5rem;
-}
-h3{
-  font-size: 2rem;
-}
-h4{
-  font-size: 1.75rem;
-}
-h5{
-  font-size: 1.5rem;
-}
-h6{
-  font-size: 1.25rem;
-}
-p{
-  font-size: 13px;
-}
 
-.button{
+/*Default font-size overrides*/
+h1{ font-size: 4.625rem; }
+h2{ font-size: 1.875rem; }
+h3{ font-size: 1.375rem; }
+h4{ font-size: 1.75rem;}
+h5{ font-size: 1.5rem; }
+h6{ font-size: 1.25rem; }
+p{ font-size: 13px; }
+/*endregion*/
+
+/*region Global Class Defaults/Overrides*/
+.fa{
+  color: $main-accent;
+}
+/*endregion*/
+
+/*region Shared Elements*/
+.dark-background{
+  background-color: $dark-background;
+  color: white;
+}
+/*endregion*/
+
+/*region Buttons and Dividers*/
+/*Large green button with padding.*/
+.button-green{
   box-shadow: 1px 1px 1px 1px #606060;
   border-radius: 50px;
   color: white;
@@ -71,53 +72,26 @@ p{
   }
 }
 
-.main-heading{
-  /*height: 665px;*/
-  background-position: center;
-  background-size: cover;
-  background-attachment: scroll;
-}
-.main-heading-wrapper
-{
-  position: relative;
-  img {
-    position: relative;
-    width: 100%;
-  }
-
+.divider{
+  margin-top: 2px;
+  width: 20px;
+  color: #8c7332;
+  border-top-width: 2px;
+  border-top-style: solid;
+  margin-bottom: 21px;
+  font-size: 13px;
 }
 
-.no-gutter > [class*='col-'] {
-  padding-right:0;
-  padding-left:0;
+.divider-full{
+  width: 40%;
+  border-bottom: 2px solid #8c7332;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 2em;
 }
+/*endregion*/
 
-
-.main-heading-text{
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5% 5% 5% 5%;
-  text-align: center;
-  background-color: black;
-  opacity: 0.9;
-  height: 100%;
-  max-height: 100%;
-  max-width: 50%;
-  h1{
-    font-family: 'Dancing Script', cursive;
-    font-style: italic;
-    /*font-size: 6.7em;*/
-    color: $main-accent;
-   }
-  h2{
-    line-height: 0.8em;
-    color: whitesmoke;
-    font-family: 'Abril Fatface', cursive;
-  }
-}
-
-
+/*region Menu Overrides*/
 .navbar{
   li{
     font-family: 'Ubuntu', sans-serif;
@@ -146,9 +120,36 @@ p{
   border-radius: 1px 1px 2px 2px;
 }
 
+/*region Wordpress Menu Styling Overrides*/
+#header .primary-menu{
 
-.btn-lets-connect{
-  margin-top: 10%;
+} // container class
+#header .primary-menu ul {} // container class first unordered list
+#header .primary-menu ul ul {} //unordered list within an unordered list
+#header .primary-menu li {} // each navigation item
+#header .primary-menu li a {} // each navigation item anchor
+#header .primary-menu li ul {} // unordered list if there is drop down items
+#header .primary-menu li li {} // each drop down navigation item
+#header .primary-menu li li a {} // each drap down navigation item anchor
+/*endregion*/
+
+/*endregion*/
+
+/*region Homepage Content*/
+#annoying{
+  div.center-block{ margin: 20%; }
+  /*Alternate colors*/
+  div:nth-of-type(odd) { background-color: #f5f5f5; }
+  /*However, the math works out for styling that the 7th element needs to be the same as background*/
+  div:nth-of-type(7) { background-color: #f4f0eb;}
+  /*Ensure all background images extend full height*/
+  .img-responsive{ min-height: 100%; }
+}
+
+.blue-links-centered{
+  padding-top: 2em;
+  background-color: #f9f9f9;
+  i{ color: #007bff; }
 }
 
 .hover-box{
@@ -163,21 +164,17 @@ p{
   div{
     height: auto;
     text-align: left;
-
     .row{
       margin-top: 30px;
     }
-
     h4{
       padding: 5% 0 2% 0;
-      /*font-size: 22px;*/
       font-style: normal;
       font-weight: 300;
       height: auto;
       line-height: 18px;
     }
     p{
-      /*font-size: 13px;*/
       height: auto;
       line-height: 22.1px;
       text-align: left;
@@ -188,149 +185,6 @@ p{
 
 .container-fluid{
   padding: 0;
-}
-
-.main-grid{
-  padding: 0;
-  flex: 1 1 80%;
-  min-height: 100vh;
-  box-shadow: 1px 0px 1px 0px grey;
-  img{
-    max-width: 50%;
-  }
-}
-
-.grid-wrapper{
-  display: grid;
-  height: 100%;
-  grid-template-rows: repeat(3, 400px);
-  grid-template-columns: repeat(3, 1fr);
-  .grid-item:nth-last-of-type(2){
-    background-color: $linen;
-  }
-  .grid-item:nth-last-of-type(1){
-    background-color: $linen;
-  }
-}
-
-.grid-item{
-  background: $item-background;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.divider{
-  margin-top: 2px;
-  width: 20px;
-  color: #8c7332;
-  border-top-width: 2px;
-  border-top-style: solid;
-  margin-bottom: 21px;
-  font-size: 13px;
-}
-
-.dividerFull{
-  width: 40%;
-  border-bottom: 2px solid #8c7332;
-  margin: 0 auto;
-  margin-top: 3%;
-  margin-bottom: 2em;
-}
-
-.grid-img{
-  opacity:0.90;
-  object-fit: contain;
-  background-position: center;
-  max-width: 100%;
-}
-
-.small{
-  grid-row: span 1;
-  grid-column: span 1;
-}
-
-.tall{
-  grid-row: span 2;
-  grid-column: span 1;
-}
-
-.grid-text{
-  text-align: left;
-  padding: 5%;
-}
-
-.contact{
-  height: 100%;
-}
-
-.contact-container{
-  padding: 20%
-}
-
-.additional-services{
-  border-top: 2px solid $item-background;
-}
-
-.fill-image{
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
-  background-repeat: round;
-  background-size: contain;
-}
-
-.icon-list-container{
-  h1{
-    padding: 5% 0 5% 0;
-    font-size: 3em;
-    text-align: center;
-  }
-  padding-bottom: 5%;
-}
-
-/*HORRIBBLE applies to ALL fa class*/
-.fa{
-  color: $main-accent;
-  /*padding-right: 30px;*/
-}
-
-.list-item-head{
-  font-weight: 700;
-}
-
-.icon-list-item{
-  ul{
-    padding: 0;
-  }
-  li{
-    list-style: circle;
-    padding: 0 5% 0 5%;
-  }
-}
-
-.events {
-  background-color: $main-background;
-  padding: 5% 5% 5% 5%;
-  h5 {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 26px;
-    height: auto;
-    margin: 0;
-  }
-  .event-container {
-    padding-top: 5%;
-  }
-  .event-list-item {
-    padding: 0 5% 2.5% 10%;
-    opacity: 0.90;
-  }
-  .lg-image {
-    padding: 5% 5% 0 10%;
-    opacity: 0.80;
-  }
 }
 
 .testimonials{
@@ -352,11 +206,21 @@ p{
   .row{
     margin-top: 1.8em;
   }
-  .fa{
-    color: #0054ff;
-  }
+  .fa{ color: #0054ff; }
 }
 
+/*Calendarly injected content requires a few tweaks*/
+.fill-image{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: round;
+  background-size: contain;
+}
+/*endregion*/
+
+/*region Footer*/
 .temp-footer{
 
   text-align: center;
@@ -375,129 +239,53 @@ p{
     text-align: center;
 
   }
-    li{
-      text-align: center;
-      list-style: none;
-      /*font-size: 20px;*/
-      padding: 3%;
-    }
-}
-.top-links{
-  padding-top: 2em;
-  background-color: #f9f9f9;
-  i{
-    color: #007bff;
+  li{
+    text-align: center;
+    list-style: none;
+    /*font-size: 20px;*/
+    padding: 3%;
   }
 }
-.temp-footer{
-  color: #f9f9f9;
-  background-color: black;
+#wrapper-footer div.row:nth-of-type(even), #wrapper-footer div.row:last-of-type {
+  margin-top: 2%;
 }
+#mc_embed_signup{
+  clear:left;
+  font:14px Helvetica,Arial,sans-serif;
+  width:100%;
+}
+/*endregion*/
 
 /*region Resolution Overrides*/
 //Large Desktop Changes.
 @media only screen and (min-width: $large-break){
-  .main-heading-text h1{
-    margin-top: 5%;
-  }
   //Resize area under slider to look a bit more stylish
   .highlight-container{
       padding: 2% 17% 0 17%;
   }
 }
-
-@media only screen and (max-width: $medium-break){
-  .grid-wrapper {
-    display: block;
-  }
-  .main-grid img{
-    max-width: 25%;
-    margin: 1em;
-  }
-  .main-heading-text{
-    h1{
-      /*font-size: 4.5em;*/
-    }
-    h2{
-
-    }
+//Medium
+@media only screen and (min-width: $medium-break){
+  /*Calculate the height to make the image 200% or double height.*/
+  .img-responsive-double {
+    min-height: calc(200%);
   }
 }
-
-@media only screen and (max-width: 930px){
-  .grid-wrapper {
-    display: block;
-  }
-  .main-heading-text{
-    h1{
-      /*font-size: 3.3em;*/
-    }
-    h2{
-      /*font-size: 2.1em;*/
-    }
+//Small screne resolutions.
+@media only screen and (min-width: $small-break){
+  /*Set a fixed height so we can do the two col high picture*/
+  #annoying [class*='col-']{
+    height: 425px;
   }
 }
-
-@media only screen and (max-width: 680px){
-  .grid-wrapper {
-    display: block;
+//Extra small resolutions
+@media only screen and (min-width: $extra-small-break){
+  .highlight-container{
+    padding: 2% 5% 0% 5%;
   }
-  .main-heading-text{
-    h1{
-      /*font-size: 1.7em;*/
-    }
-    h2{
-      /*font-size: 1.7em;*/
-    }
-    span{
-      /*font-size: 0.7em;*/
-    }
-  }
-}
-
-@media only screen and (max-width: 530px){
-  .grid-wrapper {
-    display: block;
-  }
-  .main-heading-text{
-    h1{
-      font-size: 0.8em;
-    }
-    h2{
-      font-size: 0.9em;
-    }
-    h3{
-      font-size: .7em;
-    }
-    span{
-      font-size: 0.7em;
-    }
-    .btn-lets-connect a{
-      font-size: .7em;
-    }
-    .icon-list-container h1{
-      font-size: 1.5em;
-    }
-  }
+  /*On smaller screens, reset back to max of 100%*/
+  .img-responsive-double { min-height: calc(100%); }
+  /*Additionally looks better if we also reduce the max-fixed height*/
+  #annoying [class*='col-']{ height: 340px; }
 }
 /*endregion*/
-
-/*region Wordpress Menu Styling Overrides*/
-#header .primary-menu{
-
-} // container class
-#header .primary-menu ul {} // container class first unordered list
-#header .primary-menu ul ul {} //unordered list within an unordered list
-#header .primary-menu li {} // each navigation item
-#header .primary-menu li a {} // each navigation item anchor
-#header .primary-menu li ul {} // unordered list if there is drop down items
-#header .primary-menu li li {} // each drop down navigation item
-#header .primary-menu li li a {} // each drap down navigation item anchor
-/*endregion*/
-
-
-/*
-TODO CHANGE MAYBE*/
-.col-lg-6{
-  padding: 0;
-}

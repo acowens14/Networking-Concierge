@@ -3,7 +3,7 @@ Theme Name: Networking Concierge
 Author: Andrew/Jim
 Template: understrap
 Description: Networking Concierge Website
-Version: 0.0.1
+Version: 0.0.2
 Text Domain: NetworkingConcierge
 Tags: bootstrap
 */
@@ -11,23 +11,20 @@ body {
   font-family: 'Ubuntu', sans-serif;
   font-size: 100%; }
 
-.row {
-  margin: 0; }
-  .row .col-lg-12:first-of-type {
-    padding-left: 0; }
-
+/*region Default Element Overrides*/
 /*Override defaults*/
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300; }
 
+/*Default font-size overrides*/
 h1 {
-  font-size: 7rem; }
+  font-size: 4.625rem; }
 
 h2 {
-  font-size: 4.5rem; }
+  font-size: 1.875rem; }
 
 h3 {
-  font-size: 2rem; }
+  font-size: 1.375rem; }
 
 h4 {
   font-size: 1.75rem; }
@@ -41,7 +38,21 @@ h6 {
 p {
   font-size: 13px; }
 
-.button {
+/*endregion*/
+/*region Global Class Defaults/Overrides*/
+.fa {
+  color: goldenrod; }
+
+/*endregion*/
+/*region Shared Elements*/
+.dark-background {
+  background-color: #0c0c0c;
+  color: white; }
+
+/*endregion*/
+/*region Buttons and Dividers*/
+/*Large green button with padding.*/
+.button-green {
   box-shadow: 1px 1px 1px 1px #606060;
   border-radius: 50px;
   color: white;
@@ -50,47 +61,28 @@ p {
   font-size: 1.5em;
   font-weight: 700;
   text-transform: uppercase; }
-  .button:hover {
+  .button-green:hover {
     text-decoration: none;
     color: white; }
 
-.main-heading {
-  /*height: 665px;*/
-  background-position: center;
-  background-size: cover;
-  background-attachment: scroll; }
+.divider {
+  margin-top: 2px;
+  width: 20px;
+  color: #8c7332;
+  border-top-width: 2px;
+  border-top-style: solid;
+  margin-bottom: 21px;
+  font-size: 13px; }
 
-.main-heading-wrapper {
-  position: relative; }
-  .main-heading-wrapper img {
-    position: relative;
-    width: 100%; }
+.divider-full {
+  width: 40%;
+  border-bottom: 2px solid #8c7332;
+  margin: 0 auto;
+  margin-top: 3%;
+  margin-bottom: 2em; }
 
-.no-gutter > [class*='col-'] {
-  padding-right: 0;
-  padding-left: 0; }
-
-.main-heading-text {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5% 5% 5% 5%;
-  text-align: center;
-  background-color: black;
-  opacity: 0.9;
-  height: 100%;
-  max-height: 100%;
-  max-width: 50%; }
-  .main-heading-text h1 {
-    font-family: 'Dancing Script', cursive;
-    font-style: italic;
-    /*font-size: 6.7em;*/
-    color: goldenrod; }
-  .main-heading-text h2 {
-    line-height: 0.8em;
-    color: whitesmoke;
-    font-family: 'Abril Fatface', cursive; }
-
+/*endregion*/
+/*region Menu Overrides*/
 .navbar {
   background-color: transparent !important; }
   .navbar li {
@@ -113,8 +105,28 @@ p {
   z-index: 1;
   border-radius: 1px 1px 2px 2px; }
 
-.btn-lets-connect {
-  margin-top: 10%; }
+/*region Wordpress Menu Styling Overrides*/
+/*endregion*/
+/*endregion*/
+/*region Homepage Content*/
+#annoying {
+  /*Alternate colors*/
+  /*However, the math works out for styling that the 7th element needs to be the same as background*/
+  /*Ensure all background images extend full height*/ }
+  #annoying div.center-block {
+    margin: 20%; }
+  #annoying div:nth-of-type(odd) {
+    background-color: #f5f5f5; }
+  #annoying div:nth-of-type(7) {
+    background-color: #f4f0eb; }
+  #annoying .img-responsive {
+    min-height: 100%; }
+
+.blue-links-centered {
+  padding-top: 2em;
+  background-color: #f9f9f9; }
+  .blue-links-centered i {
+    color: #007bff; }
 
 .hover-box {
   margin-bottom: 30px; }
@@ -130,13 +142,11 @@ p {
       margin-top: 30px; }
     .highlight-container div h4 {
       padding: 5% 0 2% 0;
-      /*font-size: 22px;*/
       font-style: normal;
       font-weight: 300;
       height: auto;
       line-height: 18px; }
     .highlight-container div p {
-      /*font-size: 13px;*/
       height: auto;
       line-height: 22.1px;
       text-align: left;
@@ -144,120 +154,6 @@ p {
 
 .container-fluid {
   padding: 0; }
-
-.main-grid {
-  padding: 0;
-  flex: 1 1 80%;
-  min-height: 100vh;
-  box-shadow: 1px 0px 1px 0px grey; }
-  .main-grid img {
-    max-width: 50%; }
-
-.grid-wrapper {
-  display: grid;
-  height: 100%;
-  grid-template-rows: repeat(3, 400px);
-  grid-template-columns: repeat(3, 1fr); }
-  .grid-wrapper .grid-item:nth-last-of-type(2) {
-    background-color: #f4f0eb; }
-  .grid-wrapper .grid-item:nth-last-of-type(1) {
-    background-color: #f4f0eb; }
-
-.grid-item {
-  background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.divider {
-  margin-top: 2px;
-  width: 20px;
-  color: #8c7332;
-  border-top-width: 2px;
-  border-top-style: solid;
-  margin-bottom: 21px;
-  font-size: 13px; }
-
-.dividerFull {
-  width: 40%;
-  border-bottom: 2px solid #8c7332;
-  margin: 0 auto;
-  margin-top: 3%;
-  margin-bottom: 2em; }
-
-.grid-img {
-  opacity: 0.90;
-  object-fit: contain;
-  background-position: center;
-  max-width: 100%; }
-
-.small {
-  grid-row: span 1;
-  grid-column: span 1; }
-
-.tall {
-  grid-row: span 2;
-  grid-column: span 1; }
-
-.grid-text {
-  text-align: left;
-  padding: 5%; }
-
-.contact {
-  height: 100%; }
-
-.contact-container {
-  padding: 20%; }
-
-.additional-services {
-  border-top: 2px solid #f5f5f5; }
-
-.fill-image {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
-  background-repeat: round;
-  background-size: contain; }
-
-.icon-list-container {
-  padding-bottom: 5%; }
-  .icon-list-container h1 {
-    padding: 5% 0 5% 0;
-    font-size: 3em;
-    text-align: center; }
-
-/*HORRIBBLE applies to ALL fa class*/
-.fa {
-  color: goldenrod;
-  /*padding-right: 30px;*/ }
-
-.list-item-head {
-  font-weight: 700; }
-
-.icon-list-item ul {
-  padding: 0; }
-.icon-list-item li {
-  list-style: circle;
-  padding: 0 5% 0 5%; }
-
-.events {
-  background-color: #f9f9f9;
-  padding: 5% 5% 5% 5%; }
-  .events h5 {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 26px;
-    height: auto;
-    margin: 0; }
-  .events .event-container {
-    padding-top: 5%; }
-  .events .event-list-item {
-    padding: 0 5% 2.5% 10%;
-    opacity: 0.90; }
-  .events .lg-image {
-    padding: 5% 5% 0 10%;
-    opacity: 0.80; }
 
 .testimonials {
   background-color: #c1c1c1;
@@ -276,6 +172,17 @@ p {
   .testimonials .fa {
     color: #0054ff; }
 
+/*Calendarly injected content requires a few tweaks*/
+.fill-image {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background-repeat: round;
+  background-size: contain; }
+
+/*endregion*/
+/*region Footer*/
 .temp-footer {
   text-align: center;
   /*font-size: 16px;*/
@@ -293,73 +200,38 @@ p {
     /*font-size: 20px;*/
     padding: 3%; }
 
-.top-links {
-  padding-top: 2em;
-  background-color: #f9f9f9; }
-  .top-links i {
-    color: #007bff; }
+#wrapper-footer div.row:nth-of-type(even), #wrapper-footer div.row:last-of-type {
+  margin-top: 2%; }
 
-.temp-footer {
-  color: #f9f9f9;
-  background-color: black; }
+#mc_embed_signup {
+  clear: left;
+  font: 14px Helvetica,Arial,sans-serif;
+  width: 100%; }
 
+/*endregion*/
 /*region Resolution Overrides*/
 @media only screen and (min-width: 1440px) {
-  .main-heading-text h1 {
-    margin-top: 5%; }
-
   .highlight-container {
     padding: 2% 17% 0 17%; } }
-@media only screen and (max-width: 1024px) {
-  .grid-wrapper {
-    display: block; }
+@media only screen and (min-width: 1024px) {
+  /*Calculate the height to make the image 200% or double height.*/
+  .img-responsive-double {
+    min-height: calc(200%); } }
+@media only screen and (min-width: 480px) {
+  /*Set a fixed height so we can do the two col high picture*/
+  #annoying [class*='col-'] {
+    height: 425px; } }
+@media only screen and (min-width: 320px) {
+  .highlight-container {
+    padding: 2% 5% 0% 5%; }
 
-  .main-grid img {
-    max-width: 25%;
-    margin: 1em; }
+  /*On smaller screens, reset back to max of 100%*/
+  .img-responsive-double {
+    min-height: calc(100%); }
 
-  .main-heading-text h1 {
-    /*font-size: 4.5em;*/ } }
-@media only screen and (max-width: 930px) {
-  .grid-wrapper {
-    display: block; }
-
-  .main-heading-text h1 {
-    /*font-size: 3.3em;*/ }
-  .main-heading-text h2 {
-    /*font-size: 2.1em;*/ } }
-@media only screen and (max-width: 680px) {
-  .grid-wrapper {
-    display: block; }
-
-  .main-heading-text h1 {
-    /*font-size: 1.7em;*/ }
-  .main-heading-text h2 {
-    /*font-size: 1.7em;*/ }
-  .main-heading-text span {
-    /*font-size: 0.7em;*/ } }
-@media only screen and (max-width: 530px) {
-  .grid-wrapper {
-    display: block; }
-
-  .main-heading-text h1 {
-    font-size: 0.8em; }
-  .main-heading-text h2 {
-    font-size: 0.9em; }
-  .main-heading-text h3 {
-    font-size: .7em; }
-  .main-heading-text span {
-    font-size: 0.7em; }
-  .main-heading-text .btn-lets-connect a {
-    font-size: .7em; }
-  .main-heading-text .icon-list-container h1 {
-    font-size: 1.5em; } }
+  /*Additionally looks better if we also reduce the max-fixed height*/
+  #annoying [class*='col-'] {
+    height: 340px; } }
 /*endregion*/
-/*region Wordpress Menu Styling Overrides*/
-/*endregion*/
-/*
-TODO CHANGE MAYBE*/
-.col-lg-6 {
-  padding: 0; }
 
 /*# sourceMappingURL=style.css.map */
