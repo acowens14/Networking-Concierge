@@ -16,44 +16,43 @@ get_header(); ?>
 
 <?php putRevSlider( "home" ) ?>
 
-<!-- region Black bar of Social Links -->
-<div class="container blue-links-centered">
-    <div class="row justify-content-center">
-        <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-            <a target="_blank" href="mailto:ashley@ashleyassists.com?subject=Lets-connect-AA"><i class="fa fa-envelope-square fa-4x"></i></a>
-        </div>
-        <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-            <a target="_blank" href="https://www.linkedin.com/in/ashowens/"><i class="fa fa-linkedin-square fa-4x"></i></a>
-        </div>
-        <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-            <a target="_blank" href="https://www.facebook.com/ashleyassists/"><i class="fa fa-facebook-square fa-4x"></i></a>
-        </div>
-        <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
-            <a target="_blank" href="https://www.instagram.com/ashleyassists/"><i class="fa fa-instagram fa-4x"></i></a>
-        </div>
-    </div>
-</div>
-<!-- endregion -->
-
 <!-- region Highlights -->
-<section class="container-fluid">
-<div class="highlight-container">
-    <h2 class="text-center">Networking, building and keeping relationships is a key part of any successful business</h2>
-    <div class="row">
-        <?php $query = new WP_Query(['post_type' => 'highlight']);
-            if($query->have_posts() ) while ($query->have_posts()) : $query->the_post(); ?>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <a href="#<?php the_field("scroll_id")?>">
-                        <img class="hover-box" src="<?php echo get_field('highlight_image')['url']; ?>"/>
-                    </a>
-                    <h3><?php the_title(); ?></h3>
-                    <div>
-                        <p><?php the_field('highlight_overview'); ?></p>
-                    </div>
-                </div>
-        <?php endwhile;  ?>
+<section class="container-fluid no-gutters section-background-gray1">
+    <!-- region Black bar of Social Links -->
+    <div class="container blue-links-centered">
+        <div class="row justify-content-center">
+            <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="mailto:ashley@ashleyassists.com?subject=Lets-connect-AA"><i class="fa fa-envelope-square fa-4x"></i></a>
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="https://www.linkedin.com/in/ashowens/"><i class="fa fa-linkedin-square fa-4x"></i></a>
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="https://www.facebook.com/ashleyassists/"><i class="fa fa-facebook-square fa-4x"></i></a>
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2">
+                <a target="_blank" href="https://www.instagram.com/ashleyassists/"><i class="fa fa-instagram fa-4x"></i></a>
+            </div>
+        </div>
     </div>
-</div>
+    <!-- endregion -->
+    <div class="highlight-container">
+        <h2 class="text-center">Networking, building and keeping relationships is a key part of any successful business</h2>
+        <div class="row">
+            <?php $query = new WP_Query(['post_type' => 'highlight']);
+                if($query->have_posts() ) while ($query->have_posts()) : $query->the_post(); ?>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <a href="#<?php the_field("scroll_id")?>">
+                            <img class="hover-box" src="<?php echo get_field('highlight_image')['url']; ?>"/>
+                        </a>
+                        <h3><?php the_title(); ?></h3>
+                        <div>
+                            <p><?php the_field('highlight_overview'); ?></p>
+                        </div>
+                    </div>
+            <?php endwhile;  ?>
+        </div>
+    </div>
 </section>
 <!--endregion-->
 
@@ -97,7 +96,7 @@ $post7 = (object)[
 ];
 
 $post8 = (object)[
-	'imageurl' => content_url() . "/uploads/2017/10/newsletter.jpg",
+	'imageurl' => content_url() . "/uploads/2017/10/newsletter.png",
 	'imagelink' => "/my-story",
 	'double' => false
 ];
@@ -111,7 +110,7 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
 //</editor-fold>
 ?>
 <!--region Annoying Section-->
-<section class="container-fluid" id="annoying">
+<section class="container-fluid no-gutters section-background-gray2" id="annoying">
     <div class="row no-gutters">
         <?php foreach($fakeposts as $fake_post): ?>
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
@@ -143,7 +142,7 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
 <!--endregion-->
 
 <!--region Service Pacakges-->
-<div class="container-fluid">
+<section class="container-fluid no-gutters section-background-gray2">
     <?php
     $_terms = get_terms( array('service_packages') );
     foreach ($_terms as $term) :
@@ -158,37 +157,35 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
                 ),
             ),
         )); ?>
-
         <div class="highlight-container" id="<?php echo $term_slug; ?>">
             <h2 class="text-center"><?php echo $term->name;?></h2>
             <p class="text-center"><?php echo (isset($term->description) ? $term->description : "");?></p>
             <div class="divider-full"></div>
-        <div class="row">
-            <?php
-                if( $_posts->have_posts() ) :
-                    while ( $_posts->have_posts() ) : $_posts->the_post(); ?>
-                        <div class="col-12 col-sm-2 col-lg-1 text-center">
-                            <i class="fa <?php the_field("icon") ?> fa-4x"></i>
-                        </div>
-                        <div class="col-12 col-sm-10 col-lg-5">
-                            <h2><?php the_title(); ?></h2>
-                            <?php the_field("content"); ?>
-                        </div>
-                        <?php
-                    endwhile;
-                endif; ?>
-        </div>
-
+            <div class="row">
+                <?php
+                    if( $_posts->have_posts() ) :
+                        while ( $_posts->have_posts() ) : $_posts->the_post(); ?>
+                            <div class="col-12 col-sm-2 col-lg-1 text-center">
+                                <i class="fa <?php the_field("icon") ?> fa-4x"></i>
+                            </div>
+                            <div class="col-12 col-sm-10 col-lg-5">
+                                <h2><?php the_title(); ?></h2>
+                                <?php the_field("content"); ?>
+                            </div>
+                            <?php
+                        endwhile;
+                    endif; ?>
+            </div>
         </div>
         <?php
         wp_reset_postdata();
     endforeach;
     ?>
-</div>
+</section>
 <!--endregion-->
 
 <!-- region Testimonials -->
-<section class="testimonials">
+<section class="testimonials section-background-gray1">
     <div class="container">
         <h2>Hear What Others Have To Say</h2>
         <div class="row">

@@ -15,19 +15,19 @@ $dark-background: #0c0c0c;
 $main-accent: goldenrod;
 $linen: #f4f0eb;
 $niceGreen: #519E51;
+$offwhite: #ffffff;
 
 $extra-small-break: 320px;
 $small-break: 480px;
 $medium-break: 1024px;
 $large-break: 1440px;
 
+/*region Default Element Overrides*/
+/*Override defaults*/
 body{
   font-family: 'Ubuntu', sans-serif;
   font-size: 100%;
 }
-
-/*region Default Element Overrides*/
-/*Override defaults*/
 h1, h2, h3, h4, h5, h6{
   font-weight: 300;
 }
@@ -46,13 +46,26 @@ p{ font-size: 13px; }
 .fa{
   color: $main-accent;
 }
+/*Anytime we have a section element with class container-fluid and class no-gutters let's remove the padding.*/
+section.container-fluid.no-gutters{
+  padding: 0;
+}
 /*endregion*/
 
 /*region Shared Elements*/
+body section[class*='section-']:nth-of-type(even){
+  border-top: 1px solid $alt-background;
+  border-bottom: 1px solid $alt-background;
+}
+
 .dark-background{
   background-color: $dark-background;
   color: white;
 }
+.section-background-gray1{ background-color: $item-background; }
+.section-background-gray2{ background-color: $main-background; }
+.section-bg-offwhite{ background-color: $offwhite; }
+
 /*endregion*/
 
 /*region Buttons and Dividers*/
@@ -137,18 +150,17 @@ p{ font-size: 13px; }
 
 /*region Homepage Content*/
 #annoying{
-  div.center-block{ margin: 20%; }
+  div.center-block{ margin: 15%; }
   /*Alternate colors*/
-  div:nth-of-type(odd) { background-color: #f5f5f5; }
+  div[class*='col-']:nth-of-type(odd) { background-color: $item-background; }
   /*However, the math works out for styling that the 7th element needs to be the same as background*/
-  div:nth-of-type(7) { background-color: #f4f0eb;}
+  div[class*='col-']:nth-of-type(7), div[class*='col-']:nth-of-type(8) { background-color: $linen;}
   /*Ensure all background images extend full height*/
   .img-responsive{ min-height: 100%; }
 }
 
 .blue-links-centered{
   padding-top: 2em;
-  background-color: #f9f9f9;
   i{ color: #007bff; }
 }
 
@@ -160,7 +172,6 @@ p{ font-size: 13px; }
 }
 
 .highlight-container{
-  background-color: $main-background;
   div{
     height: auto;
     text-align: left;
@@ -183,12 +194,7 @@ p{ font-size: 13px; }
   }
 }
 
-.container-fluid{
-  padding: 0;
-}
-
 .testimonials{
-  background-color: $alt-background;
   padding: 5%;
   h1{
     text-align: center;
@@ -221,31 +227,6 @@ p{ font-size: 13px; }
 /*endregion*/
 
 /*region Footer*/
-.temp-footer{
-
-  text-align: center;
-  /*font-size: 16px;*/
-  height: auto;
-  line-height: 22px;
-
-  div{
-    display: inline;
-  }
-  img{
-    max-width: 64px;
-  }
-
-  i{
-    text-align: center;
-
-  }
-  li{
-    text-align: center;
-    list-style: none;
-    /*font-size: 20px;*/
-    padding: 3%;
-  }
-}
 #wrapper-footer div.row:nth-of-type(even), #wrapper-footer div.row:last-of-type {
   margin-top: 2%;
 }
@@ -257,27 +238,6 @@ p{ font-size: 13px; }
 /*endregion*/
 
 /*region Resolution Overrides*/
-//Large Desktop Changes.
-@media only screen and (min-width: $large-break){
-  //Resize area under slider to look a bit more stylish
-  .highlight-container{
-      padding: 2% 17% 0 17%;
-  }
-}
-//Medium
-@media only screen and (min-width: $medium-break){
-  /*Calculate the height to make the image 200% or double height.*/
-  .img-responsive-double {
-    min-height: calc(200%);
-  }
-}
-//Small screne resolutions.
-@media only screen and (min-width: $small-break){
-  /*Set a fixed height so we can do the two col high picture*/
-  #annoying [class*='col-']{
-    height: 425px;
-  }
-}
 //Extra small resolutions
 @media only screen and (min-width: $extra-small-break){
   .highlight-container{
@@ -287,5 +247,26 @@ p{ font-size: 13px; }
   .img-responsive-double { min-height: calc(100%); }
   /*Additionally looks better if we also reduce the max-fixed height*/
   #annoying [class*='col-']{ height: 340px; }
+}
+//Small screne resolutions.
+@media only screen and (min-width: $small-break){
+  /*Set a fixed height so we can do the two col high picture*/
+  #annoying [class*='col-']{
+    height: 425px;
+  }
+}
+//Medium
+@media only screen and (min-width: $medium-break){
+  /*Calculate the height to make the image 200% or double height.*/
+  .img-responsive-double {
+    min-height: calc(200%);
+  }
+}
+//Large Desktop Changes.
+@media only screen and (min-width: $large-break){
+  //Resize area under slider to look a bit more stylish
+  .highlight-container{
+      padding: 2% 17% 0 17%;
+  }
 }
 /*endregion*/
