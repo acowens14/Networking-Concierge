@@ -17,7 +17,7 @@ get_header(); ?>
 <?php putRevSlider( "home" ) ?>
 
 <!-- region Highlights -->
-<section class="container-fluid no-gutters section-background-gray1">
+<section class="container-fluid no-gutters section-background-gray2">
     <!-- region Black bar of Social Links -->
     <div class="container blue-links-centered">
         <div class="row justify-content-center">
@@ -37,7 +37,7 @@ get_header(); ?>
     </div>
     <!-- endregion -->
     <div class="highlight-container">
-        <h2 class="text-center">Networking, building and keeping relationships is a key part of any successful business</h2>
+        <h3 class="text-center">Networking, building and keeping relationships is a key part of any successful business</h3>
         <div class="row">
             <?php $query = new WP_Query(['post_type' => 'highlight']);
                 if($query->have_posts() ) while ($query->have_posts()) : $query->the_post(); ?>
@@ -61,7 +61,7 @@ get_header(); ?>
 //<editor-fold desc="Annoying Section Data Load">
 $post1 = (object)[
     'title' => "My Story",
-    'titlelink' => "/my-story",
+    'titlelink' => "/my-story;",
     'content' => "How I became a corporate refugee <br> (Coming Soon!)"
 ];
 
@@ -111,25 +111,25 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
 ?>
 <!--region Annoying Section-->
 <section class="container-fluid no-gutters section-background-gray2" id="annoying">
-    <div class="row no-gutters">
-        <?php foreach($fakeposts as $fake_post): ?>
-            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
-	            <?php if(isset($fake_post->imageurl)):?>
-                    <?php if(isset($fake_post->imagelink)):?>
-                        <a href="<?php echo $fake_post->imagelink; ?>">
-                            <div class="img-responsive<?php echo($fake_post->double ? "-double" : "");?>" style="background:url('<?php echo $fake_post->imageurl;?>') center center no-repeat;"></div>
-                        </a>
+                <div class="row no-gutters">
+		            <?php foreach($fakeposts as $fake_post): ?>
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+			            <?php if(isset($fake_post->imageurl)):?>
+				            <?php if(isset($fake_post->imagelink)):?>
+                                <a href="<?php echo $fake_post->imagelink; ?>">
+                                    <div class="img-responsive<?php echo($fake_post->double ? "-double" : "");?>" style="background:url('<?php echo $fake_post->imageurl;?>') center center no-repeat;"></div>
+                                </a>
 		            <?php else: ?>
                         <div class="img-responsive<?php echo($fake_post->double ? "-double" : "");?>" style="background:url('<?php echo $fake_post->imageurl;?>') center center no-repeat;"></div>
                     <?php endif; ?>
 	            <?php else: ?>
                     <div class="center-block">
                         <?php if(isset($fake_post->titlelink)):?>
-                            <a href="<?php echo $fake_post->titlelink; ?>">
-                                <h2><?php echo $fake_post->title; ?></h2>
+                            <a href="<?php echo $fake_post->titlelink; ?>" target="_self">
+                                <h3><?php echo $fake_post->title; ?></h3>
                             </a>
                         <?php else: ?>
-                            <h2><?php echo (isset($fake_post->title) ? $fake_post->title : ""); ?></h2>
+                            <h3><?php echo (isset($fake_post->title) ? $fake_post->title : ""); ?></h3>
                         <?php endif;?>
                         <div class="divider"></div>
                         <p><?php echo (isset($fake_post->content) ? $fake_post->content : ""); ?></p>
@@ -158,7 +158,7 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
             ),
         )); ?>
         <div class="highlight-container" id="<?php echo $term_slug; ?>">
-            <h2 class="text-center"><?php echo $term->name;?></h2>
+            <h3 class="text-center"><?php echo $term->name;?></h3>
             <p class="text-center"><?php echo (isset($term->description) ? $term->description : "");?></p>
             <div class="divider-full"></div>
             <div class="row">
@@ -169,7 +169,7 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
                                 <i class="fa <?php the_field("icon") ?> fa-4x"></i>
                             </div>
                             <div class="col-12 col-sm-10 col-lg-5">
-                                <h2><?php the_title(); ?></h2>
+                                <h3><?php the_title(); ?></h3>
                                 <?php the_field("content"); ?>
                             </div>
                             <?php
@@ -184,26 +184,49 @@ $fakeposts = array($post1, $post2, $post3, $post4, $post5, $post6, $post7, $post
 </section>
 <!--endregion-->
 
+<!--region Calendly-->
+<section class="container-fluid additional-services section-background-gray1 no-gutters">
+    <div class="row no-gutters">
+        <div class="col-lg-6">
+            <div class="img-responsive fill-image" style="background-image: url('<?php echo content_url();?>/uploads/2017/09/calendar.jpg')";></div>
+        </div>
+        <div class="col-lg-6">
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/ashleyowens" style="max-width:100%;height:650px;"></div>
+            <script type="text/javascript" src="https://calendly.com/assets/external/widget.js"></script>
+            <!-- Calendly inline widget end -->
+        </div>
+    </div>
+</section>
+<!--endregion-->
+
 <!-- region Testimonials -->
 <section class="testimonials section-background-gray1">
     <div class="container">
-        <h2>Hear What Others Have To Say</h2>
-        <div class="row">
+        <h2 class="text-center">Hear What Others Have To Say</h2>
+
             <?php $query = new WP_Query(['post_type' => 'testimonial']);
+            $i = 0;
             if($query->have_posts() ) while ($query->have_posts()) : $query->the_post(); ?>
-                <div class="col-lg-1">
-                    <i class="fa fa-quote-left fa-3x"></i>
-                </div>
-                <div class="col-lg-5">
-                    <?php the_field("client_quote"); ?>
-                    <h4>
-                        <strong><?php the_field("client_name"); ?></strong>
-                        <br /><?php the_field("client_title");?>
-                        <a href="<?php the_field("client_company_website"); ?>" target="_blank"><?php the_field("client_company"); ?></a>
-                    </h4>
-                </div>
-            <?php endwhile;  ?>
-        </div>
+                <?php if($i%2 == 0) : ?>
+                    <div class="row">
+                <?php endif; ?>
+                        <div class="col-lg-1">
+                            <i class="fa fa-quote-left fa-3x"></i>
+                        </div>
+                        <div class="col-lg-5">
+                            <?php the_field("client_quote"); ?>
+                            <h4>
+                                <strong><?php the_field("client_name"); ?></strong>
+                                <br /><?php the_field("client_title");?>
+                                <a href="<?php the_field("client_company_website"); ?>" target="_blank"><?php the_field("client_company"); ?></a>
+                            </h4>
+                        </div>
+                <?php if($i%2 != 0) : ?>
+                    </div>
+                <?php endif; ?>
+            <?php $i++; endwhile;  ?>
+            <?php wp_reset_query(); ?>
     </div>
 </section>
 <!--endregion-->

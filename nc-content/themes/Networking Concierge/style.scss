@@ -34,8 +34,8 @@ h1, h2, h3, h4, h5, h6{
 
 /*Default font-size overrides*/
 h1{ font-size: 4.625rem; }
-h2{ font-size: 1.875rem; }
-h3{ font-size: 1.375rem; }
+h2{ font-size: 3rem; }
+h3{ font-size: 1.875rem; }
 h4{ font-size: 1.75rem;}
 h5{ font-size: 1.5rem; }
 h6{ font-size: 1.25rem; }
@@ -155,8 +155,11 @@ body section[class*='section-']:nth-of-type(even){
   div[class*='col-']:nth-of-type(odd) { background-color: $item-background; }
   /*However, the math works out for styling that the 7th element needs to be the same as background*/
   div[class*='col-']:nth-of-type(7), div[class*='col-']:nth-of-type(8) { background-color: $linen;}
-  /*Ensure all background images extend full height*/
-  .img-responsive{ min-height: 100%; }
+}
+
+/*Ensure all background images extend full height*/
+.img-responsive{
+  min-height: 100%;
 }
 
 .blue-links-centered{

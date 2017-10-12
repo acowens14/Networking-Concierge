@@ -21,10 +21,10 @@ h1 {
   font-size: 4.625rem; }
 
 h2 {
-  font-size: 1.875rem; }
+  font-size: 3rem; }
 
 h3 {
-  font-size: 1.375rem; }
+  font-size: 1.875rem; }
 
 h4 {
   font-size: 1.75rem; }
@@ -128,16 +128,17 @@ body section[class*='section-']:nth-of-type(even) {
 /*region Homepage Content*/
 #annoying {
   /*Alternate colors*/
-  /*However, the math works out for styling that the 7th element needs to be the same as background*/
-  /*Ensure all background images extend full height*/ }
+  /*However, the math works out for styling that the 7th element needs to be the same as background*/ }
   #annoying div.center-block {
     margin: 15%; }
   #annoying div[class*='col-']:nth-of-type(odd) {
     background-color: #f5f5f5; }
   #annoying div[class*='col-']:nth-of-type(7), #annoying div[class*='col-']:nth-of-type(8) {
     background-color: #f4f0eb; }
-  #annoying .img-responsive {
-    min-height: 100%; }
+
+/*Ensure all background images extend full height*/
+.img-responsive {
+  min-height: 100%; }
 
 .blue-links-centered {
   padding-top: 2em; }

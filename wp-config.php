@@ -43,7 +43,7 @@ else if($_SERVER['HTTP_HOST'] == 'nc.swiftconcepts.net'){
 
 //STAGING CONFIGURATION
 //TODO SETUP STAGING
-else if($_SERVER['HTTP_HOST'] == 'dev.ashleyassits.com'){
+else if($_SERVER['HTTP_HOST'] == 'dev.ashleyassists.com'){
     define('DB_HOST', '');
     define('DB_NAME', '');
     define('DB_USER', '');
